@@ -17,8 +17,7 @@
     "axios": "^1.7.9",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "jsonwebtoken": "^9.0.2",
-    "tsc": "^2.0.4"
+    "jsonwebtoken": "^9.0.2"
   },
   "devDependencies": {
     "@types/amqplib": "^0.10.6",
