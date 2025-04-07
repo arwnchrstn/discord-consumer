@@ -15,12 +15,6 @@ consumer.init()
 
 app.listen(10001, () => {
   console.log('Consumer listening on port 10001')
-
-  setInterval(() => {
-    fetch(process.env.service_url as string)
-    .then()
-    .catch()
-  }, 1000 * 60 * 8)
 })
 
 app.get('/health', (req: Request, res: Response) => {
