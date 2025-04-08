@@ -1,0 +1,16 @@
+name: Suspend discord bot consumer every 10 AM PHT, 15th and 28th of month
+
+on:
+  schedule:
+    - cron: '0 2 15,28 * *'
+  workflow_dispatch:
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run suspend command
+        run: |
+          curl -X POST \
+            -H "Authorization: Bearer ${{secrets.RENDER_API_KEY}}" \
+            https://api.render.com/v1/services/srv-cvq00vc9c44c73e1t1e0/suspend
