@@ -14,3 +14,10 @@ jobs:
           curl -X POST \
             -H "Authorization: Bearer ${{secrets.RENDER_API_KEY}}" \
             https://api.render.com/v1/services/srv-cvq00vc9c44c73e1t1e0/suspend
+  
+  trigger-api-build:
+    runs-on: ubuntu-latest
+    needs: run-script
+    steps:
+      - name: Trigger api endpoint to build
+        run: curl -X GET https://discord-consumer.onrender.com/health
