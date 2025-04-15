@@ -48,7 +48,7 @@ class DiscordQueueConsumer {
                 console.log(`Message consumed: ${new Date().toISOString()}`)
                 console.log(`Message: ${messageContent}`)
 
-                await new Promise(resolve => setTimeout(resolve, 5000));
+                await new Promise(resolve => setTimeout(resolve, 2000));
 
                 this.channel?.ack(message)
               })
@@ -56,18 +56,18 @@ class DiscordQueueConsumer {
                 console.log(error.message)
                 if(error.message.includes('Invalid queue data')) {
                   this.channel?.sendToQueue(process.env.dead_queue as string, Buffer.from(messageContent), { persistent: true })
-                  await new Promise(resolve => setTimeout(resolve, 5000));
+                  await new Promise(resolve => setTimeout(resolve, 2000));
                   this.channel?.ack(message)
                   return
                 }
                 else {
-                  await new Promise(resolve => setTimeout(resolve, 5000));
+                  await new Promise(resolve => setTimeout(resolve, 2000));
                   this.channel?.nack(message, false, true)
                 }
               })
           } catch (error: any) {
             console.log(error.message)
-            await new Promise(resolve => setTimeout(resolve, 5000));
+            await new Promise(resolve => setTimeout(resolve, 2000));
             this.channel?.nack(message, false, true)
           }
         }
