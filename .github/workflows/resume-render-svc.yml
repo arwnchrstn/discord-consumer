@@ -1,8 +1,8 @@
-name: Resume discord bot consumer every 9:30 AM PHT, 15th and 28th of month
+name: Resume discord bot consumer every 10 AM PHT, 15th and 28th of month
 
 on:
   schedule:
-    - cron: '30 1 15,28 * *'
+    - cron: '0 2 15,28 * *'
   workflow_dispatch:
 
 jobs:
