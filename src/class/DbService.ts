@@ -21,8 +21,8 @@ class DbService {
         }
       })
     } catch (error: any) {
-      console.log(error.response.data)
-      throw new Error(error.response.data)
+      console.log(error)
+      throw new Error(error)
     }
   }
 }
