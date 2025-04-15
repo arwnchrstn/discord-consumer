@@ -1,8 +1,8 @@
-name: Suspend discord bot consumer every 10 AM PHT, 15th and 28th of month
+name: Suspend discord bot consumer every 1:30 PM PHT, 15th and 28th of month
 
 on:
   schedule:
-    - cron: '0 2 15,28 * *'
+    - cron: '30 6 15,28 * *'
   workflow_dispatch:
 
 jobs:
